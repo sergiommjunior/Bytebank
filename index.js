@@ -5,12 +5,18 @@ class Client{
 
 class CheckingAccount{
     agency;
-    balance;
+    _balance = 0;
 
-    toWithdraw(withdraw){
-        if(this.balance >= withdraw) {
-            this.balance -= withdraw;
+    withdraw(value){
+        if(this._balance >= value) {
+            this._balance -= value;
         }  
+    }
+
+    deposit(value){
+        if(value > 0){
+            this._balance += value;
+        }
     }
 }
 
@@ -24,21 +30,14 @@ client2.name = "Alice";
 client2.ssn = 88822233309;
 
 const checkingAccountRicardo = new CheckingAccount();
-checkingAccountRicardo.balance = 0;
 checkingAccountRicardo.agency = 1001;
-console.log(checkingAccountRicardo.balance);
-checkingAccountRicardo.balance = 100;
-checkingAccountRicardo.toWithdraw(59);
-console.log(checkingAccountRicardo.balance);
+
+checkingAccountRicardo.deposit(100);
+checkingAccountRicardo.withdraw(50);
+checkingAccountRicardo.deposit(300);
 
 
-
-
-
-console.log(checkingAccountRicardo.balance);
-
-
-
+console.log(checkingAccountRicardo);
 
 console.log(client1);
 console.log(client2)
