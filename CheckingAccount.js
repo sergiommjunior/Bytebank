@@ -1,5 +1,8 @@
 export class CheckingAccount {
     agency;
+    client;
+
+
     _balance = 0;
 
     withdraw(value) {
@@ -14,5 +17,10 @@ export class CheckingAccount {
             return;
         }
         this._balance += value;
+    }
+
+    transfer(value, account){
+        const withdrawnAmount = this.withdraw(value);
+        account.deposit(value);
     }
 }

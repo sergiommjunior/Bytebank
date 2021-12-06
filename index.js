@@ -10,14 +10,17 @@ client2.ssn = 88822233309;
 
 const checkingAccountRicardo = new CheckingAccount();
 checkingAccountRicardo.agency = 1001;
+checkingAccountRicardo.client = client1;
+checkingAccountRicardo.deposit(500);
 
-checkingAccountRicardo.deposit(100);
+const account2 = new CheckingAccount();
+account2.client = client2;
+account2.agency = 102;
 
-checkingAccountRicardo.deposit(300);
+checkingAccountRicardo.transfer(200, account2)
 
-const withdraw = checkingAccountRicardo.withdraw(50);
 
+console.log(account2);
 console.log(checkingAccountRicardo);
 
-console.log(client1);
-console.log(client2)
+
