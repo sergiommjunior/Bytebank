@@ -1,9 +1,25 @@
+import { Client } from "./Client.js";
+
 export class CheckingAccount {
     agency;
-    client;
+    _client;
+
+    set client(param){
+        if(param instanceof Client){
+            this._client = param;
+        }
+    }
+
+    get client(){
+        return this._client;
+    }
 
 
     _balance = 0;
+
+    get balance(){
+        return this._balance;
+    }
 
     withdraw(value) {
         if (this._balance >= value) {
