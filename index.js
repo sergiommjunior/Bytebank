@@ -1,28 +1,5 @@
-class Client {
-    name;
-    ssn;
-}
-
-class CheckingAccount {
-    agency;
-    _balance = 0;
-
-    withdraw(value) {
-        if (this._balance >= value) {
-            this._balance -= value;
-            return value;
-        }
-    }
-
-    deposit(value) {
-        if (value <= 0) {
-            return;
-        }
-        this._balance += value;
-    }
-}
-
-
+import {Client} from "./Client.js"
+import {CheckingAccount} from "./CheckingAccount.js"
 const client1 = new Client();
 client1.name = "Ricardo";
 client1.ssn = 11122233309;
