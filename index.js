@@ -17,8 +17,8 @@ const account2 = new CheckingAccount();
 account2.client = client2;
 account2.agency = 102;
 
-checkingAccountRicardo.transfer(200, account2)
-
+let value = 200;
+checkingAccountRicardo.transfer(value, account2);
 
 console.log(account2);
 console.log(checkingAccountRicardo);

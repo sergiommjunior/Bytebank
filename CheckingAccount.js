@@ -21,6 +21,6 @@ export class CheckingAccount {
 
     transfer(value, account){
         const withdrawnAmount = this.withdraw(value);
-        account.deposit(value);
+        account.deposit(withdrawnAmount);
     }
 }
