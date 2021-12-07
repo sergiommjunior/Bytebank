@@ -1,28 +1,19 @@
 import {Client} from "./Client.js"
 import {CheckingAccount} from "./CheckingAccount.js"
-const client1 = new Client();
-client1.name = "Ricardo";
-client1.ssn = 11122233309;
 
-// const client2 = new Client();
-// client2.name = "Alice";
-// client2.ssn = 88822233309;
+const client1 = new Client("Ricardo", 11122233309);
 
-const checkingAccountRicardo = new CheckingAccount();
-checkingAccountRicardo.agency = 1001;
-checkingAccountRicardo.client = client1;
-checkingAccountRicardo.deposit(500);
+const client2 = new Client("Alice", 88822233309);
 
-const account2 = new CheckingAccount();
-account2.client = new Client();
-account2.client.name = "Alice";
-account2.client.ssn = 88822233309;
-account2.agency = 102;
+const account1 = new CheckingAccount(1001, client1);
+account1.deposit(500);
+
+const account2 = new CheckingAccount(102, client2);
 
 let value = 200;
-checkingAccountRicardo.transfer(value, account2);
+account1.transfer(value, account2);
 
 console.log(account2);
-console.log(checkingAccountRicardo);
+console.log(account1);
 
 

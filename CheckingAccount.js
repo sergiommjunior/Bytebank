@@ -3,6 +3,9 @@ import { Client } from "./Client.js";
 export class CheckingAccount {
     agency;
     _client;
+    _balance = 0;
+
+
 
     set client(param){
         if(param instanceof Client){
@@ -14,11 +17,13 @@ export class CheckingAccount {
         return this._client;
     }
 
-
-    _balance = 0;
-
     get balance(){
         return this._balance;
+    }
+
+    constructor(agency, client){
+        this.agency = agency;
+        this.client = client;
     }
 
     withdraw(value) {

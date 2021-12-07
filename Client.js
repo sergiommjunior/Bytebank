@@ -1,4 +1,13 @@
 export class Client {
     name;
-    ssn;
+    _ssn;
+
+    get ssn(){
+        return this._ssn;
+    }
+
+    constructor(name, ssn){
+        this.name = name;
+        this._ssn = ssn;
+    }
 }
