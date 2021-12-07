@@ -1,6 +1,7 @@
 import { Client } from "./Client.js";
 
 export class CheckingAccount {
+    static accountCounter = 0;
     agency;
     _client;
     _balance = 0;
@@ -24,6 +25,7 @@ export class CheckingAccount {
     constructor(agency, client){
         this.agency = agency;
         this.client = client;
+        CheckingAccount.accountCounter += 1;
     }
 
     withdraw(value) {
