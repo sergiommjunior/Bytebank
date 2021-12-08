@@ -1,5 +1,5 @@
-# Bytebank
+# ByteBank
 
 ## About
 
-A project based on the [Alura Bytebank Project](https://cursos.alura.com.br/formacao-react-js)
+A project based on the [Alura ByteBank Project](https://cursos.alura.com.br/formacao-react-js)
