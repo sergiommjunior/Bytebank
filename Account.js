@@ -5,7 +5,23 @@ export class Account{
         this._agency = agency;
     }
 
+    set client(param){
+        if(param instanceof Client){
+            this._client = param;
+        }
+    }
+
+    get client(){
+        return this._client;
+    }
+
+    get balance(){
+        return this._balance;
+    }
+
     withdraw(value) {
+        let tax = 1
+        const withdrawnAmount = tax * value;
         if (this._balance >= value) {
             this._balance -= value;
             return value;
