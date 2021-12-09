@@ -20,12 +20,18 @@ export class Account{
     }
 
     withdraw(value) {
-        let tax = 1
+        let tax = 1;
+        return this._sacar(value, tax);
+    }
+
+    _withdraw(value, tax){
         const withdrawnAmount = tax * value;
         if (this._balance >= withdrawnAmount) {
             this._balance -= withdrawnAmount;
             return withdrawnAmount;
         }
+
+        return 0;
     }
 
     deposit(value) {
