@@ -22,14 +22,14 @@ export class Account{
     withdraw(value) {
         let tax = 1
         const withdrawnAmount = tax * value;
-        if (this._balance >= value) {
-            this._balance -= value;
-            return value;
+        if (this._balance >= withdrawnAmount) {
+            this._balance -= withdrawnAmount;
+            return withdrawnAmount;
         }
     }
 
     deposit(value) {
-        if (value <= 1000) {
+        if (value <= 0) {
             return;
         }
         this._balance += value;
