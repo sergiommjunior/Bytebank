@@ -1,8 +1,14 @@
+//Abstract Class
 export class Account{
     constructor(openingBalance, client, agency){
+       if(this.constructor == Account) {
+            throw new Error("Shouldn't create type Account directly, because it is an Abstract Class");
+        }   
+
         this._balance = openingBalance;
         this._client = client;
         this._agency = agency;
+          
     }
 
     set client(param){
@@ -19,9 +25,9 @@ export class Account{
         return this._balance;
     }
 
+    //Abstract Method
     withdraw(value) {
-        let tax = 1;
-        return this._sacar(value, tax);
+        throw new Error("Withdraw in Account is abstract")
     }
 
     _withdraw(value, tax){

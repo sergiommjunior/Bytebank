@@ -7,8 +7,9 @@ export class CheckingAccount extends Account {
         CheckingAccount.accountCounter += 1;
     }
 
+    //overwriting the behavior of the withdraw function
     withdraw(value) {
         let tax = 1.1
-        return this._sacar(value, tax);
+        return this._withdraw(value, tax);
     }
 }
