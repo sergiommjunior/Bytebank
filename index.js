@@ -16,11 +16,12 @@ const salaryAccount1 = new SalaryAccount(50, client2, 100);
 salaryAccount1.deposit(500);
 salaryAccount1.withdraw(100);
 
+const client3 = new Client("Lais", 456789123, "456")
 const director1 = new Director("John", 10000, 100011122);
 director1.registerPassword("123456789 ")
 const manager1 = new Manager("Jake", 5000, 111222333);
 
-const loggedIn = SystemAuthentication.login(director1, "123456789");
+const loggedIn = SystemAuthentication.login(client3, "456");
 
 console.log(loggedIn);
 
